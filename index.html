@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <!-------------------------------------------------------------------------------------------->
+    <!--Start Header-->
+    <div class="banner" style="background: url('img/demo.gif') no-repeat center; background-size:contain; height: 250px;"></div>
+    <div class="banner">
+      <div class="banner-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small">End-to-End Autonomous Driving through V2X Cooperation <br>
+               Challenge of MEIS Workshop @CVPR2025</h2>
+            <p class="text">
+              This challenge focuses on end-to-end autonomous driving with V2X cooperation, by utilizing 
+              both ego-vehicle and infrastructure sensor data via V2X communication. This challenge can be 
+              formulated as a planning-centric optimization with multiple-view sensor inputs under constrained 
+              communication bandwidth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Header-->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Intro-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text add-top-margin">
+              With the rapid advancement of autonomous driving technology, vehicle-to-everything (V2X) 
+              communication has emerged as a key enabler for enhancing driving safety and efficiency. 
+              By allowing ego-vehicles to exchange real-time information with surrounding infrastructure 
+              and other road users, V2X communication extends perception capabilities beyond the line of 
+              sight and mitigates the limitations of onboard sensors. However, integrating multi-source 
+              sensor data from both ego-vehicles and infrastructure in a practical and efficient manner 
+              remains a challenging task, especially under constrained communication bandwidth. </br>
+              This challenge aims to tackle the problem of end-to-end autonomous driving with V2X cooperation 
+              by leveraging both ego-vehicle and infrastructure sensor data. Specifically, we formulate the 
+              problem as a planning-centric optimization, where multiple-view sensor inputs are fused to 
+              generate robust driving decisions. By addressing the complexities of sensor fusion, 
+              communication constraints, and real-time decision-making, this challenge seeks to advance 
+              the state-of-the-art in cooperative autonomous driving.
+            </p>
+            <h3>Table of Content</h3>
+            <ul>
+              <li><a href="#Open-loop-track">Open-loop Track</a></li>
+              <li><a href="#Closed-loop-track">Closed-loop Track</a></li>
+              <li><a href="#Related-work">Related Work</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--End Intro-->
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Open-loop-track">Open-loop Track</h2>
+            <hr>
+            <h3> Task Overview </h3>
+            <p class="text">
+              The open-loop challenge focuses on evaluating the performance of V2X-enabled 
+              autonomous driving in a non-interactive setting. Built upon the open-source 
+              UniV2X framework, this challenge provides participants with pre-recorded 
+              multi-view sensor data from both ego-vehicles and infrastructure. The primary 
+              objective is to leverage V2X communication for improved perception and 
+              decision-making under constrained bandwidth conditions. Participants are 
+              required to process the provided data to generate high-quality driving plans 
+              without real-time environmental feedback.
+            </p>
+            <h3>Evaluation</h3>
+            <p class="text">
+              Participants' solutions will be assessed based on two common metrics: L2 and Collision Rate.
+            </p>
+            <h3>Baseline and Data Illustration</h3>
+            <p class="text">
+              UniV2X is the first cooperative autonomous driving framework that seamlessly integrates 
+              all key driving modules across diverse driving views into a unified network. The code is 
+              open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
+              The dataset is based on V2X-Seq-SPD, you may see more details 
+              <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
+            </p>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Closed-loop-track">Closed-loop Track</h2>
+            <hr>
+            <h3> Task Overview </h3>
+            <p class="text">
+              The closed-loop challenge extends beyond static evaluation by incorporating 
+              real-time interaction in a simulated driving environment. Built on the upcoming 
+              DriveV2X platform, this challenge enables participants to develop and test 
+              autonomous driving agents that actively engage with dynamic traffic conditions 
+              using V2X cooperation. The goal is to optimize end-to-end driving policies that 
+              adaptively fuse ego-vehicle and infrastructure sensor data while navigating 
+              complex urban scenarios.
+            </p>
+            <h3>Evaluation</h3>
+            <p class="text">
+              Participants' solutions will be assessed based on two key common metrics: Success Rate and Driving Score.
+            </p>
+            <h3>Baseline and Data Illustration</h3>
+            <p class="text">
+              Coming soon.
+            </p>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Related-work">Related Work</h2>
+            <hr>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2404.00717">UniV2X</a>, AAAI 2025</li>
+              <li><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Yu_DAIR-V2X_A_Large-Scale_Dataset_for_Vehicle-Infrastructure_Cooperative_3D_Object_Detection_CVPR_2022_paper.pdf">DAIR-V2X</a>, CVPR 2022</li>
+              <li><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Yu_V2X-Seq_A_Large-Scale_Sequential_Dataset_for_Vehicle-Infrastructure_Cooperative_Perception_and_CVPR_2023_paper.pdf">V2X-Seq</a>, CVPR 2023</li>
+              <li><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Hao_RCooper_A_Real-world_Large-scale_Dataset_for_Roadside_Cooperative_Perception_CVPR_2024_paper.pdf">RCooper</a>, CVPR 2024</li>
+              <li><a href="https://openreview.net/pdf?id=mcY221BgKi">V2X-Graph</a>, NeurIPS 2024</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Contact">Contact</h2>
+            <hr>
+            <ul>
+              <li>Challenge Process: Ruiyang Hao, THU, email: hry20@tsinghua.org.cn</li>
+              <li>Open-loop Track Support: Jiaru Zhong, BIT, email: zhongjiaru@bit.edu.cn</li>
+              <li>Closed-loop Track Support: Haibao Yu, HKU, email: yuhaibao94@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <div class="footer-container"></div>
+  </div>
+</body>
+
+</html>
