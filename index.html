@@ -70,8 +70,11 @@
             </p>
             <h3>Table of Content</h3>
             <ul>
-              <li><a href="#Open-loop-track">Open-loop Track</a></li>
-              <li><a href="#Closed-loop-track">Closed-loop Track</a></li>
+              <!-- <li><a href="#Open-loop-track">Open-loop Track</a></li> -->
+              <li><a href="#Task_description">Task Description</a></li>
+              <li><a href="#Timeline">Challenge Timeline</a></li>
+              <li><a href="#Award">Award Setting</a></li>
+              <li><a href="#Organizer_Committee">Organizer Committee</a></li>
               <li><a href="#Related-work">Related Work</a></li>
               <li><a href="#Contact">Contact</a></li>
             </ul>
@@ -79,7 +82,7 @@
         </div>
         <!--End Intro-->
         <!-------------------------------------------------------------------------------------------->
-        <div class="flex-row">
+        <!-- <div class="flex-row">
           <div class="flex-item flex-column">
             <h2 id="Open-loop-track">Open-loop Track</h2>
             <hr>
@@ -107,16 +110,15 @@
               <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
             </p>
           </div>
-        </div>
+        </div> -->
         <!-------------------------------------------------------------------------------------------->
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 id="Closed-loop-track">Closed-loop Track</h2>
+            <h2 id="Task_description">Task Description</h2>
             <hr>
             <h3> Task Overview </h3>
             <p class="text">
-              The closed-loop challenge extends beyond static evaluation by incorporating 
-              real-time interaction in a simulated driving environment. Built on the upcoming 
+              The challenge is evaluated in a closed-loop setting. Built on the upcoming 
               DriveV2X platform, this challenge enables participants to develop and test 
               autonomous driving agents that actively engage with dynamic traffic conditions 
               using V2X cooperation. The goal is to optimize end-to-end driving policies that 
@@ -125,11 +127,53 @@
             </p>
             <h3>Evaluation</h3>
             <p class="text">
-              Participants' solutions will be assessed based on two key common metrics: Success Rate and Driving Score.
+              Participants' solutions will be assessed based on two key common metrics: Success Rate and Driving Score. <br>
+              We also encourage participants submitted open-loop metrics including L2 and collision rate as supplementary.
             </p>
-            <h3>Baseline and Data Illustration</h3>
+            <h3>Baseline and Codebase</h3>
             <p class="text">
-              Coming soon.
+              The complex driving scenarios are generated using a novel digital-twin-based simulation framework (DriveE2E), whose rendering is based on Carla. 
+              In this setup, we reimplemented UniV2X as the baseline model, ultimately forming the <b>DriveV2X</b> framework.
+              UniV2X (AAAI 2025) is the first cooperative autonomous driving framework that seamlessly integrates all 
+              key driving modules across diverse driving perspectives into a unified network. <br> <br>
+              DriveE2E framework is avalible at: <a href="https://github.com/AIR-THU/DriveE2E">https://github.com/AIR-THU/DriveE2E</a>. <br>
+              UniV2X is avalible at: <a href="https://github.com/AIR-THU/UniV2X">https://github.com/AIR-THU/UniV2X</a>. <br>
+              DriveV2X is comming soon.
+            </p>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Timeline">Challenge Timeline</h2>
+            <hr>
+            <ul>
+              <li>Release of the comprehensive DriveV2X: March 15, 2025</li>
+              <li>Submission open: April 10, 2025</li>
+              <li>Submission deadline: May 28, 2025</li>
+              <li>Decision to authors: June 4, 2025</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Award">Award Setting</h2>
+            <hr>
+            <ul>
+              <li><img src="./img/85556_gold_trophy_icon.png" alt="Figure of gold" width="20" height="20"></img>Outstanding Champion, USD $1500</li>
+              <li><img src="./img/85557_silver_trophy_icon.png" alt="Figure of silver" width="20" height="20">Honorable Runner-up, USD $1000</li>
+              <li><img src="./img/85555_bronze_trophy_icon.png" alt="Figure of bronze" width="20" height="20">Exceptional Merit Award, USD $500</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Organizer_Committee">Organizer Committee</h2>
+            <hr>
+            <p class="text"> Ruiyang Hao (THU), Haibao Yu (HKU), Chuanye Wang (BHU), Zihao Lu (ETH), Jiayu Wu (BIT), <br>
+              Jiaru Zhong (BIT), Jiahao Wang (THU), Wenxian Yang (THU), Siqi Fan (THU)
             </p>
           </div>
         </div>
@@ -141,9 +185,6 @@
             <ul>
               <li><a href="https://arxiv.org/abs/2404.00717">UniV2X</a>, AAAI 2025</li>
               <li><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Yu_DAIR-V2X_A_Large-Scale_Dataset_for_Vehicle-Infrastructure_Cooperative_3D_Object_Detection_CVPR_2022_paper.pdf">DAIR-V2X</a>, CVPR 2022</li>
-              <li><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Yu_V2X-Seq_A_Large-Scale_Sequential_Dataset_for_Vehicle-Infrastructure_Cooperative_Perception_and_CVPR_2023_paper.pdf">V2X-Seq</a>, CVPR 2023</li>
-              <li><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Hao_RCooper_A_Real-world_Large-scale_Dataset_for_Roadside_Cooperative_Perception_CVPR_2024_paper.pdf">RCooper</a>, CVPR 2024</li>
-              <li><a href="https://openreview.net/pdf?id=mcY221BgKi">V2X-Graph</a>, NeurIPS 2024</li>
             </ul>
           </div>
         </div>
@@ -159,7 +200,6 @@
             </ul>
           </div>
         </div>
-        <!-------------------------------------------------------------------------------------------->
       </div>
     </div>
     <div class="footer-container"></div>
