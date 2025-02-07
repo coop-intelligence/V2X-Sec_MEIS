@@ -68,11 +68,10 @@
               communication constraints, this challenge seeks to advance 
               the state-of-the-art in cooperative autonomous driving.
             </p>
-            <h3>Challange Pre-Registration Link: <a href="https://forms.gle/tXWmT3EAhJqFKPGq5">here</a></h3>
             <h3>Table of Content</h3>
             <ul>
-              <!-- <li><a href="#Open-loop-track">Open-loop Track</a></li> -->
-              <li><a href="#Task_description">Task Description</a></li>
+              <li><a href="#Perception-track">Track1: Temporal Perception</a></li>
+              <li><a href="#E2E-track">Track2: End-to-End AD</a></li>
               <li><a href="#Timeline">Challenge Timeline</a></li>
               <li><a href="#Award">Award Setting</a></li>
               <li><a href="#Organizer_Committee">Organizer Committee</a></li>
@@ -81,65 +80,64 @@
             </ul>
           </div>
         </div>
-        <!--End Intro-->
+        <!-- End Intro-->
         <!-------------------------------------------------------------------------------------------->
-        <!-- <div class="flex-row">
+        <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 id="Open-loop-track">Open-loop Track</h2>
+            <h2 id="Perception-track">Track1: Temporal Perception</h2>
             <hr>
             <h3> Task Overview </h3>
             <p class="text">
-              The open-loop challenge focuses on evaluating the performance of V2X-enabled 
-              autonomous driving in a non-interactive setting. Built upon the open-source 
-              UniV2X framework, this challenge provides participants with pre-recorded 
-              multi-view sensor data from both ego-vehicles and infrastructure. The primary 
-              objective is to leverage V2X communication for improved perception and 
-              planning under constrained bandwidth conditions. Participants are 
-              required to process the provided data to generate high-quality driving plans 
-              without real-time environmental feedback.
+              The Cooperative Temporal Perception Challenge focuses on advancing V2X-enabled detection and multi-object tracking. 
+              Built on the open-source UniV2X framework, this challenge provides participants with pre-recorded multi-view 
+              sensor data from both ego-vehicles and infrastructure. The primary objective is to leverage V2X communication 
+              to enhance temporal perception under bandwidth-constrained conditions. Participants are required to process the 
+              provided data to generate high-quality detection and tracking results. <br>
+              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
+              <b>Task Output</b>: 3D position, heading angel, tracking ID.
             </p>
             <h3>Evaluation</h3>
             <p class="text">
-              Participants' solutions will be assessed based on two common metrics: L2 and Collision Rate.
+              Participants' solutions will be assessed based on three common metrics: mAP, AMOTA, and transmission cost. <br>
+              The final evaluation score for this track will be the weighted average of these three indicators after normalization, 
+              with weights of 0.4, 0.4, and 0.2, respectively.
             </p>
             <h3>Baseline and Data Illustration</h3>
             <p class="text">
-              UniV2X (AAAI 2025) is the first cooperative autonomous driving framework that seamlessly integrates 
-              all key driving modules across diverse driving views into a unified network. The code is 
-              open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
+              UniV2X provides a baseline for cooperative temporal perception in autonomous driving systems. <br>
+              The code is open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
               The dataset is based on V2X-Seq-SPD, you may see more details 
               <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
             </p>
           </div>
-        </div> -->
+        </div>
         <!-------------------------------------------------------------------------------------------->
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 id="Task_description">Task Description</h2>
+            <h2 id="E2E-track">Track2: End-to-End AD</h2>
             <hr>
             <h3> Task Overview </h3>
             <p class="text">
-              The challenge is evaluated in a closed-loop setting. Built on the upcoming 
-              DriveV2X platform, this challenge enables participants to develop and test 
-              autonomous driving agents that actively engage with dynamic traffic conditions 
-              using V2X cooperation. The goal is to optimize end-to-end driving policies that 
-              adaptively fuse ego-vehicle and infrastructure sensor data while navigating 
-              complex urban scenarios.
+              The Cooperative End-to-End Autonomous Driving Challenge aims to advance V2X-enabled end-to-end autonomous driving. 
+              Built on the open-source UniV2X framework, this challenge allows participants to develop and test end-to-end 
+              autonomous driving agents through V2X cooperation. The goal is to optimize driving policies that seamlessly 
+              integrate ego-vehicle and infrastructure sensor data, enabling adaptive planning in complex urban environments.<br>
+              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
+              <b>Task Output</b>: planning results (waypoints of future 5 seconds).
             </p>
             <h3>Evaluation</h3>
             <p class="text">
-              Participants' solutions will be assessed based on two key common metrics: Success Rate and Driving Score. <br>
-              We also encourage participants submitted open-loop metrics including L2 and collision rate as supplementary.
+              Participants' solutions will be assessed based on four metrics: L2 error, Collision Rate, Off-road Rate, and Transmission Cost.
+              The final evaluation score for this track will be the weighted average of these four indicators after normalization, 
+              with weights of 0.3, 0.3, 0.2 and 0.2, respectively.
             </p>
             <h3>Baseline and Codebase</h3>
             <p class="text">
-              The complex driving scenarios are generated using a novel digital-twin-based simulation framework (DriveE2E), whose rendering is based on Carla. 
-              In this setup, we reimplemented UniV2X as the baseline model, ultimately forming the <b>DriveV2X</b> framework.
-              UniV2X (AAAI 2025) is the first cooperative autonomous driving framework that seamlessly integrates all 
-              key driving modules across diverse driving perspectives into a unified network. <br> <br>
-              DriveE2E framework is avalible at: <a href="https://github.com/AIR-THU/DriveE2E">https://github.com/AIR-THU/DriveE2E</a>. <br>
-              UniV2X is avalible at: <a href="https://github.com/AIR-THU/UniV2X">https://github.com/AIR-THU/UniV2X</a>. <br>
-              DriveV2X is comming soon.
+              UniV2X is the first cooperative end-to-end autonomous driving framework that seamlessly integrates all 
+              key driving modules across diverse driving perspectives into a unified network. <br>
+              The code is open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
+              The dataset is based on V2X-Seq-SPD, you may see more details 
+              <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
             </p>
           </div>
         </div>
@@ -149,7 +147,8 @@
             <h2 id="Timeline">Challenge Timeline</h2>
             <hr>
             <ul>
-              <li>Release of the comprehensive DriveV2X: March 15, 2025</li>
+              <li>Release of the test dataset: March 15, 2025</li>
+              <li>Submission Instruction: March 15, 2025</li>
               <li>Submission open: April 10, 2025</li>
               <li>Submission deadline: May 28, 2025</li>
               <li>Decision to authors: June 4, 2025</li>
@@ -173,9 +172,70 @@
           <div class="flex-item flex-column">
             <h2 id="Organizer_Committee">Organizer Committee</h2>
             <hr>
-            <p class="text"> Ruiyang Hao (THU), Haibao Yu (HKU), Chuanye Wang (BHU), Zihao Lu (ETH), Jiayu Wu (BIT), <br>
-              Jiaru Zhong (BIT), Jiahao Wang (THU), Wenxian Yang (THU), Siqi Fan (THU)
-            </p>
+            <div class="gallery add-top-margin-small add-bottom-margin-small">
+              <div class="flex-column">
+                <img src="img/ruiyang_hao.jpg">
+                <h3>Ruiyang Hao</h3>
+                <div>Organizer</div>
+                <div>
+                  <a href="https://ry-hao.top/" target="_blank">Website</a>
+                  &nbsp;|&nbsp;
+                  <a href="https://www.linkedin.com/in/ryhn-hao/" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/jiaru_zhong.jpg">
+                <h3>Jiaru Zhong</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://scholar.google.com/citations?user=Q9KMoxkAAAAJ" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/jiahao_wang.jpg">
+                <h3>Jiahao Wang</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://www.researchgate.net/profile/Jiahao-Wang-45" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/wenxian_yang.jpg">
+                <h3>Wenxian Yang</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://scholar.google.com/citations?user=Kiz73xwAAAAJ" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/chuanye_wang.jpg">
+                <h3>Chuanye Wang</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://github.com/chuanye-Wang/" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/siqi_fan.jpg">
+                <h3>Siqi Fan</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://leofansq.github.io/" target="_blank">Website</a>
+                  &nbsp;|&nbsp;
+                  <a href="https://www.linkedin.com/in/fansq/" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/haibao_yu.jpg">
+                <h3>Haibao Yu</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://github.com/haibao-yu/" target="_blank">Website</a>
+                  &nbsp;|&nbsp;
+                  <a href="https://www.linkedin.com/in/haibao-yu-152221118/" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!-------------------------------------------------------------------------------------------->
@@ -196,8 +256,8 @@
             <hr>
             <ul>
               <li>Challenge Process: Ruiyang Hao, THU, email: hry20@tsinghua.org.cn</li>
-              <li>Open-loop Track Support: Jiaru Zhong, BIT, email: zhongjiaru@bit.edu.cn</li>
-              <li>Closed-loop Track Support: Haibao Yu, HKU, email: yuhaibao94@gmail.com</li>
+              <li>Track1 Support: Jiaru Zhong, BIT, email: zhongjiaru@bit.edu.cn</li>
+              <li>Track2 Support: Haibao Yu, HKU, email: yuhaibao94@gmail.com</li>
             </ul>
           </div>
         </div>
