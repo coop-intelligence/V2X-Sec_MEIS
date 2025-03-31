@@ -12,6 +12,9 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
   <script src="js/menu.js"></script>
   <script src="js/footer.js"></script>
   <style>
@@ -74,6 +77,7 @@
             <ul>
               <li><a href="#Perception-track">Track1: Temporal Perception</a></li>
               <li><a href="#E2E-track">Track2: End-to-End AD</a></li>
+              <li><a href="Submission-instruction">Submission Instruction</a></li>
               <li><a href="#Timeline">Challenge Timeline</a></li>
               <li><a href="#Award">Award Setting</a></li>
               <li><a href="#Organizer_Committee">Organizer Committee</a></li>
@@ -95,14 +99,14 @@
               sensor data from both ego-vehicles and infrastructure. The primary objective is to leverage V2X communication 
               to enhance temporal perception under bandwidth-constrained conditions. Participants are required to process the 
               provided data to generate high-quality detection and tracking results. <br>
-              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
-              <b>Task Output</b>: 3D position, heading angel, tracking ID.
+              <b>Task Input</b>: vehicle data (front-view image), infrastructure data (image), command, ego states, and calibration files. <br>
+              <b>Task Output</b>: 3D boxes information, tracking ID.
             </p>
             <h3>Evaluation</h3>
             <p class="text">
-              Participants' solutions will be assessed based on three common metrics: mAP, AMOTA, and transmission cost. <br>
-              The final evaluation score for this track will be the weighted average of these three indicators after normalization, 
-              with weights of 0.4, 0.4, and 0.2, respectively.
+              Participants' solutions will be assessed based on two common metrics: mAP and AMOTA. <br>
+              The final evaluation score for this track will be the weighted average of these two indicators, 
+              with weights of 0.5, and 0.5, respectively. (Since the values of these two indicators are relatively close, normalization will not be applied.)
             </p>
             <h3>Baseline and Data Illustration</h3>
             <p class="text">
@@ -124,14 +128,27 @@
               Built on the open-source UniV2X framework, this challenge allows participants to develop and test end-to-end 
               autonomous driving agents through V2X cooperation. The goal is to optimize driving policies that seamlessly 
               integrate ego-vehicle and infrastructure sensor data, enabling adaptive planning in complex urban environments.<br>
-              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
+              <b>Task Input</b>: vehicle data (front-view image), infrastructure data (image), command, ego states, and calibration files. <br>
               <b>Task Output</b>: planning results (waypoints of future 5 seconds).
             </p>
             <h3>Evaluation</h3>
             <p class="text">
-              Participants' solutions will be assessed based on four metrics: L2 error, Collision Rate, Off-road Rate, and Transmission Cost.
-              The final evaluation score for this track will be the weighted average of these four indicators after normalization, 
-              with weights of 0.3, 0.3, 0.2 and 0.2, respectively.
+              Participants' solutions will be assessed based on three metrics: L2 error, Collision Rate, and Off-road Rate.
+              The final value for each metric will be represented by the average of the values measured at 2.5s, 3.5s, and 4.5s.
+              The final evaluation for this track will be the weighted average of these three normalized metrics, 
+              with weights of 0.3, 0.4, and 0.3, respectively. <br>
+              <b>Normalization Notes</b>: To ensure fair evaluation, all three metrics (L2 Error, Collision Rate, and Off-road Rate) will be normalized using Min-Max normalization. The baseline method has the following reference values:
+              L2 Error: 3.48m; Collision Rate: 0.34%; Off-road Rate: 0.89%.
+            </p>
+            <p style="margin-top: 0%;">For a given team's results, each metric \(x\), it will be normalized as follows:</p>
+            <div>
+              \[
+                x' = \frac{x_{\text{baseline}} - x}{x_{\text{baseline}}}
+              \]
+             </div>
+            <p style="margin-top: 0%;">where: \(x\) is the team's result for the given metric; 
+              \(x_{\text{baseline}}\) is the baseline method's performance for that metric;
+              \(x'\) is the normalized score, with higher values indicating better performance.
             </p>
             <h3>Baseline and Codebase</h3>
             <p class="text">
@@ -140,6 +157,16 @@
               The code is open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
               The dataset is based on V2X-Seq-SPD, you may see more details 
               <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
+            </p>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Submission-instruction">Submission Instruction</h2>
+            <hr>
+            <p>
+              Input/Output Requirements, Illustration Document Requirements, and Submission Portal are shown in <a href="./widgets.html">this page</a>
             </p>
           </div>
         </div>
