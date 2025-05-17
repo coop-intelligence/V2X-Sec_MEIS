@@ -56,9 +56,11 @@
             <h2 id="Perception-track">Submission Instruction</h2>
             <p>
               Participants need to inference on test dataset and submit their result file to our portal.<br>
-              Release of Test Dataset: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00:00 (GMT+8), May 17, 2025,
+              Test Dataset has been released
               in <a href="https://drive.google.com/drive/folders/1zeMHE_k8mzxTxYHzXQpzDtpbzS9Z5dPL">this link</a> <br>
-              Result Submission Deadline: 23:59 (GMT+8), May 24, 2025.
+              
+              As the test set was released 18 hours later than originally scheduled, the submission deadline has been extended by one day. <br>
+              So the Final Submission Deadline is 23:59 (GMT+8), May 25, 2025.
             </p>
             <h3>Input and Output Requirements </h3>
               <h4>Input Constraints</h4>
@@ -76,6 +78,9 @@
                   We provide an inference pipeline with official baseline <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/INFERENCE_TEST.md">here</a><br>
                   <b>Example:</b> We provide a sample inference file on the val dataset <a href="https://drive.google.com/file/d/1Rbwv12EzpWjyKb2vlXHOOnHWLq5eZQcY/view?usp=drive_link">here</a>, 
                   structured as follows:
+                </p>
+                <p>
+                  if you want to submit results for Track 1 and Track 2:
                   <pre style="margin: 0%;padding: 0; white-space: pre-wrap;"><code>
 {
     results: [
@@ -91,6 +96,42 @@
             boxes_3d_det: LiDARInstance3DBoxes
             scores_3d_det: Tensor, shape=(M,)
             labels_3d_det: Tensor, shape=(M,)
+            # Planning Results (future 5 seconds 2Hz traj points)
+            planning_traj: Tensor, shape=(1, 10, 2)
+        },
+        {……},
+        ……
+    ]
+}
+                  </code></pre>
+                  if you only want to submit results for Track 1:
+                  <pre style="margin: 0%;padding: 0; white-space: pre-wrap;"><code>
+{
+    results: [
+        {
+            token: str
+            # Tracking results
+            boxes_3d: LiDARInstance3DBoxes
+            scores_3d: Tensor, shape=(N,)
+            labels_3d: Tensor, shape=(N,)
+            track_scores: Tensor, shape=(N,)
+            track_ids: Tensor, shape=(N,)
+            # Detection results
+            boxes_3d_det: LiDARInstance3DBoxes
+            scores_3d_det: Tensor, shape=(M,)
+            labels_3d_det: Tensor, shape=(M,)
+        },
+        {……},
+        ……
+    ]
+}
+                  </code></pre>
+                  if you only want to submit results for Track 2:
+                  <pre style="margin: 0%;padding: 0; white-space: pre-wrap;"><code>
+{
+    results: [
+        {
+            token: str
             # Planning Results (future 5 seconds 2Hz traj points)
             planning_traj: Tensor, shape=(1, 10, 2)
         },
