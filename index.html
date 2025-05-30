@@ -136,18 +136,20 @@
               Participants' solutions will be assessed based on three metrics: L2 error, Collision Rate, and Off-road Rate.
               The final value for each metric will be represented by the average of the values measured at 2.5s, 3.5s, and 4.5s.
               The final evaluation for this track will be the weighted average of these three normalized metrics, 
-              with weights of 0.3, 0.4, and 0.3, respectively. <br>
-              <b>Normalization Notes</b>: To ensure fair evaluation, all three metrics (L2 Error, Collision Rate, and Off-road Rate) will be normalized using Min-Max normalization. The baseline method has the following reference values:
-              L2 Error: 3.48m; Collision Rate: 0.34%; Off-road Rate: 0.89%.
+              with weights of 0.5, 0.25, and 0.25, respectively. <br>
+              <b>Normalization Notes</b>: To ensure fair evaluation, all three metrics (L2 Error, Collision Rate, and Off-road Rate) will be normalized using Min-Max normalization. 
+              the reference values for each metric are: L2 Error: 3.5m; Collision Rate: 2%; Off-road Rate: 2.5%.
+              the reference improvement range for each metric are: L2 Error: 1.0m; Collision Rate: 1.5%; Off-road Rate: 2.5%.
             </p>
             <p style="margin-top: 0%;">For a given team's results, each metric \(x\), it will be normalized as follows:</p>
             <div>
               \[
-                x' = \frac{x_{\text{baseline}} - x}{x_{\text{baseline}}}
+                x' = min(\frac{x_{\text{ref}} - x}{x_{\text{range}}}, 1.0)
               \]
-             </div>
+            </div>
             <p style="margin-top: 0%;">where: \(x\) is the team's result for the given metric; 
-              \(x_{\text{baseline}}\) is the baseline method's performance for that metric;
+              \(x_{\text{ref}}\) is the reference performance for that metric;
+              \(x_{\text{range}}\) is the reference improvement range for that metric;
               \(x'\) is the normalized score, with higher values indicating better performance.
             </p>
             <h3>Baseline and Codebase</h3>
